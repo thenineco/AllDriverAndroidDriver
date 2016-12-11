@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Driver app</string>
+    <string name="info_input_phone_number">Чтобы получить доступ к сервису, вам необходимо
+        авторизоваться
+    </string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="user_phone_number">Ваш номер телефона</string>
+    <string name="get_code_by_sms">Получить код по смс</string>
+    <string name="info_pin_cod_input">На ваш номер отправили смс с кодом</string>
+    <string name="input_code">Введите код</string>
+</resources>

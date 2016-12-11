@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "com.soberdriver.driverapp"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        maven { url 'https://github.com/yandexmobile/yandexmapkit-android/raw/maven/' }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:cardview-v7:25.0.1'
+
+    /*Butterknife*/
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    /*MOXY*/
+    compile 'com.arello-mobile:moxy-app-compat:1.1.2'
+    apt 'com.arello-mobile:moxy-compiler:1.1.2'
+    /*Mask for phone number*/
+    compile 'com.github.pinball83:masked-edittext:1.0.3'
+    /*Circle imageView*/
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    /*Material menu*/
+    compile 'com.balysv.materialmenu:material-menu:2.0.0'
+    /*Swipe menu recyclerView*/
+    compile 'com.tubb.smrv:swipemenu-recyclerview:3.0.5'
+    /*ViewPager indicator*/
+    compile 'me.relex:circleindicator:1.2.2@aar'
+    /*Expandable layout*/
+    compile 'com.bignerdranch.android:expandablerecyclerview:2.1.1'
+    /*Yandex map kit*/
+    compile 'ru.yandex:yandexmapkit:2.5.1@aar'
+    /*Retrofit*/
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    /*Rx*/
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+    /*Stetho*/
+    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
+}
