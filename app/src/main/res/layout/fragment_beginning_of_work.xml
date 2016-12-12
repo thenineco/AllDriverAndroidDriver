@@ -1,5 +1,90 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</FrameLayout>
+    <include layout="@layout/layout_driver_item" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/main_container_margin"
+        android:layout_marginRight="@dimen/main_container_margin"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Вы можете принимать заказы, но счет на минимальном значении. Рекомендуем \n  пополнить баланс "
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/beginning_of_work_skin_info_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/main_container_margin"
+        android:layout_marginRight="@dimen/main_container_margin"
+        android:layout_marginTop="90dp"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        android:textSize="12sp" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/beginning_of_work_get_started_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="@dimen/main_container_margin"
+        android:layout_marginRight="@dimen/main_container_margin"
+        android:layout_marginTop="10dp"
+        android:background="?attr/colorPrimaryDark"
+        android:text="Открыть смену"
+        android:textColor="@color/colorWhite" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/main_container_margin"
+        android:layout_marginRight="@dimen/main_container_margin"
+        android:layout_marginTop="60dp">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Новости"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="Сегодняшняя дата"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="@dimen/main_container_margin"
+        android:layout_marginRight="@dimen/main_container_margin">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Сегодняшние новости"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/beginning_of_invite_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:text="@string/invite_friend"
+            android:textColor="@color/colorBlack"
+            android:textSize="12sp" />
+
+    </FrameLayout>
+</LinearLayout>

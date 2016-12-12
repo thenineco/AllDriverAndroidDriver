@@ -1,23 +1,22 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main_drawer_layout"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/main_drawer_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
         <FrameLayout
             android:id="@+id/main_driver_fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize" />
+        <include layout="@layout/layout_navigation_drawer" />
+    </android.support.v4.widget.DrawerLayout>
 
-        <com.soberdriver.driverapp.ui.view.AppCustomToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"/>
-    </FrameLayout>
+    <com.soberdriver.driverapp.ui.view.AppCustomToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize" />
 
-    <include layout="@layout/layout_navigation_drawer"/>
-
-</android.support.v4.widget.DrawerLayout>
+</FrameLayout>

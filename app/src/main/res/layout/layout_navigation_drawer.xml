@@ -24,7 +24,7 @@
             android:textSize="15sp" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/user_menu_phone_number_text_view"
+            android:id="@+id/user_menu_user_experience_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="стаж 12 лет"
@@ -32,7 +32,7 @@
             android:textSize="12sp"/>
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/user_menu_user_order_history_text_view"
+            android:id="@+id/user_menu_user_lider_board_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -47,7 +47,7 @@
             android:background="@color/colorWhite" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/user_menu_user_payment_text_view"
+            android:id="@+id/user_menu_pre_order_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -62,7 +62,7 @@
             android:background="@color/colorWhite" />
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/user_menu_user_drivers_text_view"
+            android:id="@+id/user_menu_mi_orders_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

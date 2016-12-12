@@ -11,4 +11,7 @@
     <string name="info_input_user_info">Нам понадобятся данные вашего паспорта, водительских прав.
         Не беспокойтесь, мы их только проверим
     </string>
+    <string name="invite_friend"><u>Пригласить друга</u></string>
+    <string name="in_official_skin">Вы на смене <u>в костюме</u></string>
+    <string name="no_official_skin">Вы на смене <u>без костюма</u></string>
 </resources>

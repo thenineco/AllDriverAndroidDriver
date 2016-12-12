@@ -1,56 +1,48 @@
-<<<<<<< Original
-<<<<<<< Original
-<<<<<<< Original
-<<<<<<< Original
-<<<<<<< Original
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<< Original<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="com.soberdriver.registration.InputPhoneNumberActivity"/>
+    <activity android:name="com.soberdriver.registration.InputPhoneNumberActivity" />
 </application>
 </manifest>
 
-    =======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="layout.InputPinCodeActivity"/>
+    <activity android:name="layout.InputPinCodeActivity" />
 </application>
-</manifest>
-    >>>>>>> Added
+</manifest>>>>>>>> Added
 
-    =======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="com.soberdriver.driverapp.InputUserInfoActivity"/>
+    <activity android:name="com.soberdriver.driverapp.InputUserInfoActivity" />
 </application>
-</manifest>
-    >>>>>>> Added
+</manifest>>>>>>>> Added
 
-    =======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="com.soberdriver.driverapp.UserRegistrationFinishActivity"/>
+    <activity android:name="com.soberdriver.driverapp.UserRegistrationFinishActivity" />
 </application>
-</manifest>
-    >>>>>>> Added
+</manifest>>>>>>>> Added
 
-    =======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="com.soberdriver.driverapp.VirtualAccountActivity"/>
+    <activity android:name="com.soberdriver.driverapp.VirtualAccountActivity" />
 </application>
-</manifest>
-    >>>>>>> Added
+</manifest>>>>>>>> Added
 
-    =======
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
-    <activity android:name="com.soberdriver.driverapp.MainDriverActivity"/>
+    <activity android:name="com.soberdriver.driverapp.MainDriverActivity" />
 </application>
-</manifest>
-    >>>>>>> Added
+</manifest>>>>>>>> Added
+
+    =======<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.UserProfileActivity" />
+</application>
+</manifest>>>>>>>> Added
