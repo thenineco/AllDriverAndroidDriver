@@ -1,8 +1,457 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context="com.soberdriver.driverapp.InputUserInfoActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.soberdriver.driverapp.ui.view.AppCustomToolbar
+        android:id="@+id/user_info_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="@dimen/info_text_top_margins"
+                android:gravity="center"
+                android:text="@string/info_input_user_info"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorMaterialGray300"
+                android:gravity="center_vertical"
+                android:text="             Личные данные"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Имя"
+                android:inputType="textCapSentences"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textCursorDrawable="@drawable/cursor_black"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorMaterialGray400"/>
 
 
-</FrameLayout>
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_last_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Фамилия"
+                android:inputType="textCapSentences"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textCursorDrawable="@drawable/cursor_black"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorMaterialGray400"/>
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_otchestvo_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Отчество"
+                android:inputType="textCapSentences"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textCursorDrawable="@drawable/cursor_black"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorMaterialGray400"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/user_info_resident_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Гражданин РФ"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"/>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_birth_day_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Дата рождения"
+                android:inputType="date"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="15sp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorBlack"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Ваш пол"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginLeft="@dimen/main_container_margin"
+                          android:layout_marginRight="@dimen/main_container_margin"
+                          android:layout_marginTop="10dp"
+                          android:orientation="horizontal">
+
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:orientation="horizontal">
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/user_info_gender_male_radio_bitton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Мужчина"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_weight="1"
+                              android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/user_info_gender_female_radio_bitton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Женщина"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="15sp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_email_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="e-mail"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="15sp"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorMaterialGray400"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorMaterialGray300"
+                android:gravity="center_vertical"
+                android:text="             Паспортные данные"
+                android:textSize="12sp"/>
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_passport_serial_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Серия Номер"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="15sp"/>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorBlack"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Скан или фото разворота с фотографией"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_passport_main_photo_load_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_button_drawable"
+                android:text="Загрузить"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Скан или фото прописки"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_passport_second_photo_load_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_button_drawable"
+                android:text="Загрузить"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Селфи с паспортом"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_selfie_with_passport_load_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_button_drawable"
+                android:text="Загрузить"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorMaterialGray300"
+                android:gravity="center_vertical"
+                android:text="             Водительское удостоверение"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_driver_id_number_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:hint="Номер ВУ"
+                android:inputType="number"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="15sp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorMaterialGray400"/>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/user_info_driver_id_date_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="15dp"
+                android:background="@null"
+                android:inputType="date"
+                android:hint="Дата выдачи"
+                android:textColor="@color/colorBlack"
+                android:textColorHint="@color/colorBlack"
+                android:textSize="15sp"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorMaterialGray400"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Скан или фото лицевой стороны ВУ"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_driver_id_main_photo_load_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_button_drawable"
+                android:text="Загрузить"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:text="Скан или фото обратной стороны ВУ"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_driver_id_second_photo_load_btn"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round_button_drawable"
+                android:text="Загрузить"
+                android:textColor="@color/colorWhite"
+                android:textSize="10sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/user_info_terms_of_use_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Я согласен с условиями и принимаю  пользовательское соглашение"
+                    android:textColor="@color/colorBlack"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/user_info_personal_data_check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Я даю согласие на обработку персональных данных"
+                    android:textColor="@color/colorBlack"/>
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/user_info_register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="?attr/colorPrimaryDark"
+                android:text="зарегистрироваться"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

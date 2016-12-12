@@ -10,7 +10,6 @@ import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.registration.InputPhoneNumberPresenter;
 import com.soberdriver.driverapp.presentation.view.registration.InputPhoneNumberView;
 import com.soberdriver.driverapp.ui.activity.AppBaseActivity;
-import com.soberdriver.driverapp.ui.activity.InputPinCodeActivity;
 import com.soberdriver.driverapp.ui.view.SelectablePhoneEditText;
 
 import butterknife.BindView;

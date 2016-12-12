@@ -8,4 +8,7 @@
     <string name="get_code_by_sms">Получить код по смс</string>
     <string name="info_pin_cod_input">На ваш номер отправили смс с кодом</string>
     <string name="input_code">Введите код</string>
+    <string name="info_input_user_info">Нам понадобятся данные вашего паспорта, водительских прав.
+        Не беспокойтесь, мы их только проверим
+    </string>
 </resources>

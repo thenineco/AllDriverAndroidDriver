@@ -1,0 +1,102 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorWhite"
+              android:orientation="vertical">
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content">
+        <com.soberdriver.driverapp.ui.view.AppCustomToolbar
+            android:id="@+id/virtual_account_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/virtual_account_back_btn"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_arrow_back_white"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="?actionBarSize"
+            android:orientation="vertical">
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Ваш баланс"
+                android:textColor="@color/colorBlack"/>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center"
+                          android:layout_marginTop="20dp"
+                          android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/virtual_account_many_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="0"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="50dp"/>
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/currency_rub"/>
+            </LinearLayout>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/main_container_margin"
+                android:layout_marginRight="@dimen/main_container_margin"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Что бы получать заказы, сумма вашего виртуального счета должна быть не менее 501Р"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="@dimen/main_container_margin"
+            android:layout_marginRight="@dimen/main_container_margin"
+            android:orientation="vertical">
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/virtual_account_fill_up_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/colorPrimaryDark"
+                android:text="поплнить"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="20dp"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Вы можете пополнить счет с банковской карты или счета мобильного телефона"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/virtual_account_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </FrameLayout>
+
+</LinearLayout>

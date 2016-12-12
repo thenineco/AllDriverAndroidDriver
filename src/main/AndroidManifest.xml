@@ -1,5 +1,8 @@
 <<<<<<< Original
 <<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
@@ -21,6 +24,33 @@
 
 <application>
     <activity android:name="com.soberdriver.driverapp.InputUserInfoActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.UserRegistrationFinishActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.VirtualAccountActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.MainDriverActivity"/>
 </application>
 </manifest>
     >>>>>>> Added

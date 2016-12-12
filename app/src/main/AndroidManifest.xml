@@ -9,7 +9,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.registration.InputPhoneNumberActivity"
+        <activity android:name=".ui.activity.MainDriverActivity"
                   android:screenOrientation="portrait"
                   android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -18,11 +18,19 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.InputPinCodeActivity"
+
+        <activity android:name=".ui.activity.registration.InputPinCodeActivity"
                   android:screenOrientation="portrait"/>
 
-        <activity android:name=".ui.activity.InputUserInfoActivity"
+        <activity android:name=".ui.activity.registration.InputUserInfoActivity"
                   android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.registration.UserRegistrationFinishActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.VirtualAccountActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>
