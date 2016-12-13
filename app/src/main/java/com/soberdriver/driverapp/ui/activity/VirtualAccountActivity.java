@@ -14,7 +14,7 @@ import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.VirtualAccountPresenter;
 import com.soberdriver.driverapp.presentation.view.VirtualAccountView;
 import com.soberdriver.driverapp.ui.fragment.FillUpFinishFragment;
-import com.soberdriver.driverapp.ui.fragment.FillUpMoneyFragment;
+import com.soberdriver.driverapp.ui.fragment.MoneyFillUpFragment;
 import com.soberdriver.driverapp.ui.view.AppCustomToolbar;
 
 import butterknife.BindView;
@@ -23,6 +23,8 @@ import butterknife.OnClick;
 
 public class VirtualAccountActivity extends AppBaseActivity implements VirtualAccountView {
     public static final String TAG = "VirtualAccountActivity";
+    public static final String FILL_UP_ONLY = "fill_up_only";
+
     @InjectPresenter
     VirtualAccountPresenter mVirtualAccountPresenter;
     @BindView(R.id.virtual_account_toolbar)
@@ -33,10 +35,11 @@ public class VirtualAccountActivity extends AppBaseActivity implements VirtualAc
     AppCompatTextView mVirtualAccountManyTextView;
     @BindView(R.id.virtual_account_fill_up_btn)
     AppCompatButton mVirtualAccountFillUpBtn;
+    private boolean fillUpOnly;
 
-    public static Intent getIntent(final Context context) {
+    public static Intent getIntent(final Context context, boolean fillUpOnly) {
         Intent intent = new Intent(context, VirtualAccountActivity.class);
-
+        intent.putExtra(FILL_UP_ONLY, fillUpOnly);
         return intent;
     }
 
@@ -47,6 +50,10 @@ public class VirtualAccountActivity extends AppBaseActivity implements VirtualAc
         setContentView(R.layout.activity_virtual_account);
         ButterKnife.bind(this);
         setToolbar();
+        fillUpOnly = getIntent().getBooleanExtra(FILL_UP_ONLY, false);
+        if (fillUpOnly) {
+            startFillUpFragment();
+        }
     }
 
     private void setToolbar() {
@@ -60,8 +67,8 @@ public class VirtualAccountActivity extends AppBaseActivity implements VirtualAc
     public void startFillUpFragment() {
         mVirtualAccountBackBtn.setVisibility(View.VISIBLE);
         getSupportFragmentManager().beginTransaction()
-                .add(R.id.virtual_account_fragment_container, FillUpMoneyFragment.newInstance())
-                .addToBackStack(FillUpMoneyFragment.TAG)
+                .add(R.id.virtual_account_fragment_container, MoneyFillUpFragment.newInstance())
+                .addToBackStack(MoneyFillUpFragment.TAG)
                 .commit();
     }
 
@@ -79,12 +86,25 @@ public class VirtualAccountActivity extends AppBaseActivity implements VirtualAc
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.virtual_account_back_btn:
-                onBackPressed();
-                mVirtualAccountBackBtn.setVisibility(View.GONE);
+                if (!fillUpOnly) {
+                    onBackPressed();
+                    mVirtualAccountBackBtn.setVisibility(View.GONE);
+                } else {
+                    finish();
+                }
                 break;
             case R.id.virtual_account_fill_up_btn:
                 startFillUpFragment();
                 break;
+        }
+    }
+
+    public void closeVirtualAccount() {
+        if (!fillUpOnly) {
+            startActivity(MainDriverActivity.getIntent(this));
+            finish();
+        } else {
+            finish();
         }
     }
 }

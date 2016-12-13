@@ -11,6 +11,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.FillUpFinishPresenter;
 import com.soberdriver.driverapp.presentation.view.FillUpFinishView;
+import com.soberdriver.driverapp.ui.activity.VirtualAccountActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -55,5 +56,6 @@ public class FillUpFinishFragment extends AppBaseFragment implements FillUpFinis
 
     @OnClick(R.id.fill_up_finish_go_to_profile_btn)
     public void onClick() {
+        ((VirtualAccountActivity)getActivity()).closeVirtualAccount();
     }
 }

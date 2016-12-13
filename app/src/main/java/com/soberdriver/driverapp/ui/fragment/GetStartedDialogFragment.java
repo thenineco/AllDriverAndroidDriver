@@ -1,7 +1,5 @@
 package com.soberdriver.driverapp.ui.fragment;
 
-import static com.soberdriver.driverapp.ui.fragment.BeginningOfWorkFragment.inOfficial;
-
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;

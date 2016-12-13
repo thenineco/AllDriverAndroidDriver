@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="300dp"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Выберите фотографию"
+        android:textColor="@color/colorBlack"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/dialog_create_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:text="Снять фото"
+        android:background="?attr/colorPrimaryDark"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/dialog_get_from_library"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:text="Выбрать из библиотеки"
+        android:background="?attr/colorPrimaryDark"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/dialog_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorBlack"
+        android:text="Отменить"
+        android:background="@color/colorWhite"/>
+
+</LinearLayout>

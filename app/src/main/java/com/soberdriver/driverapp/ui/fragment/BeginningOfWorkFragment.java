@@ -15,6 +15,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.BeginningOfWorkPresenter;
 import com.soberdriver.driverapp.presentation.view.BeginningOfWorkView;
+import com.soberdriver.driverapp.ui.activity.UserProfileActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -80,11 +81,13 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     }
 
     private void setOfficialMode() {
-        mBeginningOfWorkSkinInfoTextView.setText(getResources().getString(R.string.in_official_skin));
+        mBeginningOfWorkSkinInfoTextView.setText(
+                getResources().getString(R.string.in_official_skin));
     }
 
     private void setNoOfficialMode() {
-        mBeginningOfWorkSkinInfoTextView.setText(getResources().getString(R.string.no_official_skin));
+        mBeginningOfWorkSkinInfoTextView.setText(
+                getResources().getString(R.string.no_official_skin));
     }
 
     @OnClick({R.id.layout_driver_open_profile_btn, R.id.beginning_of_work_get_started_btn,
@@ -92,21 +95,30 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_driver_open_profile_btn:
+                openUserProfile();
                 break;
             case R.id.beginning_of_work_get_started_btn:
-                if (started) {
-                    setStartedMode();
-                    started = false;
-                } else {
-                    setFinishedMode();
-                    started = true;
-                    getStartedDialogFragment.show(getActivity().getSupportFragmentManager(),
-                            "Get started dialog");
-                }
+                startOrFinishWorkTime();
                 break;
             case R.id.beginning_of_invite_btn:
                 break;
         }
+    }
+
+    private void startOrFinishWorkTime() {
+        if (started) {
+            setStartedMode();
+            started = false;
+        } else {
+            setFinishedMode();
+            started = true;
+            getStartedDialogFragment.show(getActivity().getSupportFragmentManager(),
+                    "Get started dialog");
+        }
+    }
+
+    private void openUserProfile() {
+        startActivity(UserProfileActivity.getIntent(getContext()));
     }
 
     public void setStartedMode() {

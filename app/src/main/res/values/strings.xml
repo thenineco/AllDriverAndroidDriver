@@ -11,7 +11,25 @@
     <string name="info_input_user_info">Нам понадобятся данные вашего паспорта, водительских прав.
         Не беспокойтесь, мы их только проверим
     </string>
-    <string name="invite_friend"><u>Пригласить друга</u></string>
-    <string name="in_official_skin">Вы на смене <u>в костюме</u></string>
-    <string name="no_official_skin">Вы на смене <u>без костюма</u></string>
+    <string name="invite_friend">
+        <u>Пригласить друга</u>
+    </string>
+    <string name="in_official_skin">Вы на смене
+        <u>в костюме</u>
+    </string>
+    <string name="no_official_skin">Вы на смене
+        <u>без костюма</u>
+    </string>
+    <string name="details">
+        <u>подробнее</u>
+    </string>
+    <string name="completions_story">
+        <u>История пополнений</u>
+    </string>
+    <string name="how_to_increase_the_rating">
+        <u>Как поднять рейтинг?</u>
+    </string>
+    <string name="travel_story">
+        <u>История поездок</u>
+    </string>
 </resources>
