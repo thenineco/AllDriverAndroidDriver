@@ -15,6 +15,7 @@ import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.BeginningOfWorkPresenter;
 import com.soberdriver.driverapp.presentation.view.BeginningOfWorkView;
+import com.soberdriver.driverapp.ui.activity.MainDriverActivity;
 import com.soberdriver.driverapp.ui.activity.UserProfileActivity;
 
 import butterknife.BindView;
@@ -33,9 +34,12 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     AppCompatTextView mBeginningOfInviteBtn;
     @BindView(R.id.beginning_of_work_skin_info_text_view)
     AppCompatTextView mBeginningOfWorkSkinInfoTextView;
+    @BindView(R.id.beginning_of_work_emulation_btn)
+    AppCompatButton mEmulationBtn;
     private boolean started;
     public static boolean inOfficial;
     private GetStartedDialogFragment getStartedDialogFragment;
+    private GetFinishedDialogFragment getFinishedDialogFragment;
 
     public static BeginningOfWorkFragment newInstance() {
         BeginningOfWorkFragment fragment = new BeginningOfWorkFragment();
@@ -57,13 +61,17 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     @Override
     public void onViewCreated(final View view, final Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setDialogParams();
+        setDialogFragmentParams();
 
     }
 
-    private void setDialogParams() {
+    private void setDialogFragmentParams() {
         getStartedDialogFragment =
                 new GetStartedDialogFragment();
+
+        getFinishedDialogFragment =
+                new GetFinishedDialogFragment();
+
         getStartedDialogFragment.setGetStartedDialogListener(
                 new GetStartedDialogFragment.GetStartedDialogListener() {
                     @Override
@@ -78,6 +86,18 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
                         setNoOfficialMode();
                     }
                 });
+
+        getFinishedDialogFragment.setOnClickListener(view -> {
+            switch (view.getId()) {
+                case R.id.dialog_get_finished_yes_btn:
+                    setStartedMode();
+                    getFinishedDialogFragment.dismiss();
+                    break;
+                case R.id.dialog_get_finished_no_btn:
+                    getFinishedDialogFragment.dismiss();
+                    break;
+            }
+        });
     }
 
     private void setOfficialMode() {
@@ -91,7 +111,7 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     }
 
     @OnClick({R.id.layout_driver_open_profile_btn, R.id.beginning_of_work_get_started_btn,
-            R.id.beginning_of_invite_btn})
+            R.id.beginning_of_invite_btn, R.id.beginning_of_work_emulation_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.layout_driver_open_profile_btn:
@@ -102,16 +122,18 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
                 break;
             case R.id.beginning_of_invite_btn:
                 break;
+            case R.id.beginning_of_work_emulation_btn:
+                ((MainDriverActivity) getActivity()).startActiveOrderFragment();
+                break;
         }
     }
 
     private void startOrFinishWorkTime() {
         if (started) {
-            setStartedMode();
-            started = false;
+            getFinishedDialogFragment.show(getActivity().getSupportFragmentManager(),
+                    "Get finished dialog");
         } else {
             setFinishedMode();
-            started = true;
             getStartedDialogFragment.show(getActivity().getSupportFragmentManager(),
                     "Get started dialog");
         }
@@ -122,16 +144,20 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
     }
 
     public void setStartedMode() {
+        started = false;
         TypedValue typedValue = new TypedValue();
         Resources.Theme theme = getContext().getTheme();
         theme.resolveAttribute(R.attr.colorPrimaryDark, typedValue, true);
         int color = typedValue.data;
+        mEmulationBtn.setVisibility(View.GONE);
         mBeginningOfWorkGetStartedBtn.setBackgroundColor(color);
         mBeginningOfWorkGetStartedBtn.setTextColor(Color.WHITE);
         mBeginningOfWorkGetStartedBtn.setText("Открыть смену");
     }
 
     public void setFinishedMode() {
+        started = true;
+        mEmulationBtn.setVisibility(View.VISIBLE);
         mBeginningOfWorkGetStartedBtn.setTextColor(Color.BLACK);
         mBeginningOfWorkGetStartedBtn.setBackgroundColor(Color.WHITE);
         mBeginningOfWorkGetStartedBtn.setText("Закрыть смену");

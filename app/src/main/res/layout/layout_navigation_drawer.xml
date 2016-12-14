@@ -32,7 +32,7 @@
             android:textSize="12sp"/>
 
         <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/user_menu_user_lider_board_text_view"
+            android:id="@+id/user_menu_user_leader_board_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"

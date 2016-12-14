@@ -1,6 +1,10 @@
 <<<<<<< Original
 <<<<<<< Original
 <<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
+<<<<<<< Original
 <<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<< Original<<<<<<<
 Original<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
@@ -74,6 +78,42 @@ Original<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
 <application>
     <activity android:name="com.soberdriver.driverapp.PasswordChangeActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.DriverTripsActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.DriverInfoActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.CompletionsStoryActivity"/>
+</application>
+</manifest>
+    >>>>>>> Added
+
+    =======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<application>
+    <activity android:name="com.soberdriver.driverapp.LiaderBordActivity"/>
 </application>
 </manifest>
     >>>>>>> Added

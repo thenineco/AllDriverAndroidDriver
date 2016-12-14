@@ -10,28 +10,27 @@ import android.view.View;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.soberdriver.driverapp.R;
-import com.soberdriver.driverapp.presentation.presenter.RatingPresenter;
-import com.soberdriver.driverapp.presentation.view.RatingView;
+import com.soberdriver.driverapp.presentation.presenter.DriverInfoPresenter;
+import com.soberdriver.driverapp.presentation.view.DriverInfoView;
 import com.soberdriver.driverapp.ui.view.AppCustomToolbar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RatingActivity extends AppBaseActivity implements RatingView {
-    public static final String TAG = "RatingActivity";
+public class DriverInfoActivity extends AppBaseActivity implements DriverInfoView {
+    public static final String TAG = "DriverInfoActivity";
     @InjectPresenter
-    RatingPresenter mRatingPresenter;
-    @BindView(R.id.rating_toolbar)
+    DriverInfoPresenter mDriverInfoPresenter;
+    @BindView(R.id.driver_info_start_change_info_btn)
+    AppCompatButton mStartChangeInfoBtn;
+    @BindView(R.id.driver_info_toolbar)
     AppCustomToolbar mToolbar;
-    @BindView(R.id.rating_back_btn)
+    @BindView(R.id.driver_info_back_btn)
     AppCompatImageView mBackBtn;
-    @BindView(R.id.rating_show_leader_board_btn)
-    AppCompatButton mShowLeaderBoardBtn;
 
     public static Intent getIntent(final Context context) {
-        Intent intent = new Intent(context, RatingActivity.class);
-
+        Intent intent = new Intent(context, DriverInfoActivity.class);
         return intent;
     }
 
@@ -39,25 +38,23 @@ public class RatingActivity extends AppBaseActivity implements RatingView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rating);
+        setContentView(R.layout.activity_driver_info);
         ButterKnife.bind(this);
         setToolbar();
     }
 
     private void setToolbar() {
-        mToolbar.setToolbarTitle("Рейтинг");
+        mToolbar.setToolbarTitle("Подробнее о себе");
         Toolbar toolbar = mToolbar.getToolbar();
         setSupportActionBar(toolbar);
     }
 
-    @OnClick({R.id.rating_back_btn, R.id.rating_show_leader_board_btn})
+    @OnClick({R.id.driver_info_start_change_info_btn, R.id.driver_info_back_btn})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.rating_back_btn:
-                finish();
+            case R.id.driver_info_start_change_info_btn:
                 break;
-            case R.id.rating_show_leader_board_btn:
-                startActivity(LeaderBordActivity.getIntent(this));
+            case R.id.driver_info_back_btn:
                 finish();
                 break;
         }

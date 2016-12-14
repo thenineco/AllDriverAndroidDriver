@@ -23,6 +23,7 @@ import butterknife.OnClick;
 
 public class InputUserInfoActivity extends AppBaseActivity implements InputUserInfoView {
     public static final String TAG = "InputUserInfoActivity";
+    private static final int PICK_IMAGE_REQUEST = 1;
     @InjectPresenter
     InputUserInfoPresenter mInputUserInfoPresenter;
     @BindView(R.id.user_info_name_edit_text)
@@ -95,18 +96,32 @@ public class InputUserInfoActivity extends AppBaseActivity implements InputUserI
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.user_info_passport_main_photo_load_btn:
+                openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_passport_second_photo_load_btn:
+                openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_selfie_with_passport_load_btn:
+                openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_driver_id_main_photo_load_btn:
+                openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_driver_id_second_photo_load_btn:
+                openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_register_btn:
                 startActivity(UserRegistrationFinishActivity.getIntent(this));
                 break;
         }
+    }
+
+    public void openGalleryForTakeNewPhoto() {
+        Intent intent = new Intent();
+// Show only images, no videos or anything else
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+// Always show the chooser (if there are multiple options available)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
     }
 }

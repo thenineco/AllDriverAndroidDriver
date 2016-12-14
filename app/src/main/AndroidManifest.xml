@@ -13,7 +13,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activity.MainDriverActivity"
+        <activity android:name=".ui.activity.registration.InputPhoneNumberActivity"
                   android:screenOrientation="portrait"
                   android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -38,6 +38,28 @@
 
         <activity android:name=".ui.activity.UserProfileActivity"
                   android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.ChangePasswordActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.RatingActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.DriverTripsActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.DriverInfoActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.CompletionsStoryActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.LeaderBordActivity"
+                  android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.activity.MainDriverActivity"
+                  android:screenOrientation="portrait"
+                  android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>

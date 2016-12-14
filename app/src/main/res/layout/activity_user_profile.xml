@@ -210,6 +210,7 @@
                 </LinearLayout>
             </android.support.v7.widget.CardView>
             <android.support.v7.widget.CardView
+                android:id="@+id/user_profile_driver_trips_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
@@ -229,69 +230,9 @@
                         android:text="Мои поездки"
                         android:textColor="@color/colorBlack"
                         android:textSize="15sp"/>
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:background="@color/colorMaterialGray400">
-                        <android.support.v7.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:text="Карта"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="15sp"/>
-                    </FrameLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:orientation="horizontal">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-                            <android.support.v7.widget.AppCompatTextView
-                                android:id="@+id/user_profile_last_trip_date_text_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="12.10.2016, 21:10-23:45"
-                                android:textSize="15sp"/>
-                            <android.support.v7.widget.AppCompatTextView
-                                android:id="@+id/user_profile_last_trip_start_text_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="10dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="А: откуда"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="15sp"/>
-                            <android.support.v7.widget.AppCompatTextView
-                                android:id="@+id/user_profile_last_trip_finish_text_view"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="Б: куда"
-                                android:textColor="@color/colorBlack"
-                                android:textSize="15sp"/>
-                        </LinearLayout>
-                        <android.support.v7.widget.AppCompatTextView
-                            android:id="@+id/user_profile_last_trip_auto_logo_image_view"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            android:text="Лого автомобиля"
-                            android:textColor="@color/colorBlack"
-                            android:textSize="15sp"/>
-                    </LinearLayout>
+
+                    <include layout="@layout/layout_driver_trip"/>
+
                     <android.support.v7.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

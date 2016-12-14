@@ -1,0 +1,113 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/colorMaterialGray400">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Таймер"
+            android:textColor="@color/colorBlack"/>
+    </FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Нужен водитель"
+            android:textColor="@color/colorBlack"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Категория B, в костюме"
+            android:textColor="@color/colorBlack"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Откуда: ул.Лесная, 46"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Куда:пос. Ямонтово, ул. Первая,2"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Когда: в 22:20 (через 30 мин)"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Вам добираться до места заказа 15 мин"
+            android:textColor="@color/colorBlack"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Клиент: Иван"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"/>
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Ездили с ним 5 раз"
+            android:textColor="@color/colorBlack"/>
+        <ru.yandex.yandexmapkit.MapView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="25dp"
+            android:apiKey="hzWJxRleUvs1gjYiJsK9UJj8BywNg2B3XJThOOlugoHWx5wLB1ylR1eeXXSpCV-WPOLRGG-yFatJHvQbMXY6jbS1pPez3elni7ZpR-B4AJQ="/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal">
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/active_order_get_order_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimaryDark"
+            android:text="Беру"
+            android:textColor="@color/colorWhite"/>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/active_order_cancel_order_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimaryDark"
+            android:text="отмена"
+            android:textColor="@color/colorWhite"/>
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,9 +1,5 @@
 package com.soberdriver.driverapp.ui.activity;
 
-import static android.R.attr.bitmap;
-import static android.R.attr.breadCrumbShortTitle;
-import static android.R.attr.data;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -15,7 +11,6 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.bumptech.glide.Glide;
@@ -24,8 +19,6 @@ import com.soberdriver.driverapp.presentation.presenter.UserProfilePresenter;
 import com.soberdriver.driverapp.presentation.view.UserProfileView;
 import com.soberdriver.driverapp.ui.fragment.GetPhotoDialogFragment;
 import com.soberdriver.driverapp.ui.view.RatingBarView;
-
-import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -96,21 +89,25 @@ public class UserProfileActivity extends AppBaseActivity implements UserProfileV
             R.id.user_profile_completions_story_btn,
             R.id.user_profile_how_to_increase_the_rating_btn, R.id.user_profile_driver_contract_btn,
             R.id.user_profile_change_profile_btn, R.id.user_profile_back_btn,
-            R.id.user_profile_avatar_image_view, R.id.user_profile_rating_btn})
+            R.id.user_profile_avatar_image_view, R.id.user_profile_rating_btn,
+            R.id.user_profile_driver_trips_btn})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.user_profile_driver_details_btn:
+                openDriverInfoActivity();
                 break;
             case R.id.user_profile_money_fill_up_btn:
                 openMoneyFillUpActivity();
                 break;
             case R.id.user_profile_completions_story_btn:
+                openCompletionsStoryActivity();
                 break;
             case R.id.user_profile_how_to_increase_the_rating_btn:
                 break;
             case R.id.user_profile_driver_contract_btn:
                 break;
             case R.id.user_profile_change_profile_btn:
+                openPasswordChangeActivity();
                 break;
             case R.id.user_profile_back_btn:
                 finish();
@@ -121,7 +118,26 @@ public class UserProfileActivity extends AppBaseActivity implements UserProfileV
             case R.id.user_profile_rating_btn:
                 openRatingActivity();
                 break;
+            case R.id.user_profile_driver_trips_btn:
+                openDriverTripsActivity();
+                break;
         }
+    }
+
+    private void openCompletionsStoryActivity() {
+        startActivity(CompletionsStoryActivity.getIntent(this));
+    }
+
+    private void openDriverInfoActivity() {
+        startActivity(DriverInfoActivity.getIntent(this));
+    }
+
+    private void openDriverTripsActivity() {
+        startActivity(DriverTripsActivity.getIntent(this));
+    }
+
+    private void openPasswordChangeActivity() {
+        startActivity(ChangePasswordActivity.getIntent(this));
     }
 
     private void openRatingActivity() {

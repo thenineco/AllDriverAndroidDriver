@@ -32,4 +32,16 @@
     <string name="travel_story">
         <u>История поездок</u>
     </string>
+    <string name="select_period">
+        <u>Выбрать период</u>
+    </string>
+    <string name="need_help">
+        <u>Нужна помощь</u>
+    </string>
+    <string name="rate_details">
+        <u>Детали тарифа</u>
+    </string>
+    <string name="need_a_correction_value">
+        <u>Нужна корректировка стоимости</u>
+    </string>
 </resources>

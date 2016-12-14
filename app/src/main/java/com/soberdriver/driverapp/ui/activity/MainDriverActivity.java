@@ -17,7 +17,12 @@ import com.balysv.materialmenu.MaterialMenuDrawable;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.MainDriverPresenter;
 import com.soberdriver.driverapp.presentation.view.MainDriverView;
+import com.soberdriver.driverapp.ui.fragment.ActiveOrderFragment;
 import com.soberdriver.driverapp.ui.fragment.BeginningOfWorkFragment;
+import com.soberdriver.driverapp.ui.fragment.OrderSelectedFragment;
+import com.soberdriver.driverapp.ui.fragment.OrderStartedFragment;
+import com.soberdriver.driverapp.ui.fragment.PaymentCorrectFragment;
+import com.soberdriver.driverapp.ui.fragment.PaymentFragment;
 import com.soberdriver.driverapp.ui.view.AppCustomToolbar;
 import com.soberdriver.driverapp.utils.DisplayUtils;
 
@@ -37,7 +42,7 @@ public class MainDriverActivity extends AppBaseActivity implements MainDriverVie
     AppCompatTextView mUserMenuUserNameTextView;
     @BindView(R.id.user_menu_user_experience_text_view)
     AppCompatTextView mUserMenuUserExperienceTextView;
-    @BindView(R.id.user_menu_user_lider_board_text_view)
+    @BindView(R.id.user_menu_user_leader_board_text_view)
     AppCompatTextView mUserMenuUserLiderBoardTextView;
     @BindView(R.id.user_menu_pre_order_text_view)
     AppCompatTextView mUserMenuPreOrderTextView;
@@ -68,9 +73,10 @@ public class MainDriverActivity extends AppBaseActivity implements MainDriverVie
         setToolbar();
         setDrawerView();
         startBeginingOfWorkFragment();
+//        startActiveOrderFragment();
     }
 
-    @OnClick({R.id.user_menu_user_experience_text_view, R.id.user_menu_user_lider_board_text_view,
+    @OnClick({R.id.user_menu_user_experience_text_view, R.id.user_menu_user_leader_board_text_view,
             R.id.user_menu_pre_order_text_view, R.id.user_menu_mi_orders_text_view,
             R.id.user_menu_rates_text_view, R.id.user_menu_travel_safety_text_view,
             R.id.user_menu_about_company_text_view})
@@ -78,7 +84,8 @@ public class MainDriverActivity extends AppBaseActivity implements MainDriverVie
         switch (view.getId()) {
             case R.id.user_menu_user_experience_text_view:
                 break;
-            case R.id.user_menu_user_lider_board_text_view:
+            case R.id.user_menu_user_leader_board_text_view:
+                startLeaderBordActivity();
                 break;
             case R.id.user_menu_pre_order_text_view:
                 break;
@@ -124,6 +131,10 @@ public class MainDriverActivity extends AppBaseActivity implements MainDriverVie
         });
     }
 
+    private void startLeaderBordActivity() {
+        startActivity(LeaderBordActivity.getIntent(this));
+    }
+
     private void setToolbar() {
         Toolbar toolbar = mToolbar.getToolbar();
         setSupportActionBar(toolbar);
@@ -140,6 +151,46 @@ public class MainDriverActivity extends AppBaseActivity implements MainDriverVie
             }
             // random state
         });
+    }
+
+    public void startActiveOrderFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_driver_fragment_container, ActiveOrderFragment.newInstance())
+                .addToBackStack(ActiveOrderFragment.TAG)
+                .commit();
+        mToolbar.setToolbarTitle("Активный заказ");
+    }
+
+    public void startOrderSelectedFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_driver_fragment_container, OrderSelectedFragment.newInstance())
+                .addToBackStack(OrderSelectedFragment.TAG)
+                .commit();
+        mToolbar.setToolbarTitle("Еду на заказ");
+    }
+
+    public void startOrderStartedFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_driver_fragment_container, OrderStartedFragment.newInstance())
+                .addToBackStack(OrderStartedFragment.TAG)
+                .commit();
+        mToolbar.setToolbarTitle("На заказе");
+    }
+
+    public void startPaymentFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_driver_fragment_container, PaymentFragment.newInstance())
+                .addToBackStack(PaymentFragment.TAG)
+                .commit();
+        mToolbar.setToolbarTitle("Оцените");
+    }
+
+    public void startPaymentCorrectFragment() {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.main_driver_fragment_container, PaymentCorrectFragment.newInstance())
+                .addToBackStack(PaymentCorrectFragment.TAG)
+                .commit();
+        mToolbar.setToolbarTitle("Корректировка стоимости");
     }
 
     public void startBeginingOfWorkFragment() {
