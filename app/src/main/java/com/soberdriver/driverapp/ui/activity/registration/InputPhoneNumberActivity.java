@@ -41,6 +41,12 @@ public class InputPhoneNumberActivity extends AppBaseActivity implements InputPh
 
     @OnClick(R.id.input_phone_number_send_user_data_btn)
     public void onClick() {
+        String userPhoneNumber = mUserPhoneNumberEditText.getText().toString();
+        mInputPhoneNumberPresenter.sendUserPhoneNumber(userPhoneNumber);
+    }
+
+    @Override
+    public void startInputPinCod() {
         startActivity(InputPinCodeActivity.getIntent(this));
     }
 }

@@ -11,6 +11,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.module.network.networkmodule.models.driver.Driver;
+import com.module.network.networkmodule.utils.DriverUtil;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.registration.InputUserInfoPresenter;
 import com.soberdriver.driverapp.presentation.view.registration.InputUserInfoView;
@@ -66,6 +68,7 @@ public class InputUserInfoActivity extends AppBaseActivity implements InputUserI
     AppCompatButton mUserInfoRegisterBtn;
     @BindView(R.id.user_info_toolbar)
     AppCustomToolbar mUserInfoToolbar;
+    private Driver mDriver;
 
     public static Intent getIntent(final Context context) {
         Intent intent = new Intent(context, InputUserInfoActivity.class);
@@ -79,6 +82,10 @@ public class InputUserInfoActivity extends AppBaseActivity implements InputUserI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_user_info);
         ButterKnife.bind(this);
+        mDriver = DriverUtil.getDriver(this);
+        if (mDriver == null) {
+            mDriver = new Driver();
+        }
         setToolbar();
     }
 
@@ -111,9 +118,14 @@ public class InputUserInfoActivity extends AppBaseActivity implements InputUserI
                 openGalleryForTakeNewPhoto();
                 break;
             case R.id.user_info_register_btn:
-                startActivity(UserRegistrationFinishActivity.getIntent(this));
+                mInputUserInfoPresenter.saveUserInfo(mDriver);
                 break;
         }
+    }
+
+    @Override
+    public void finishUserRegistration() {
+        startActivity(UserRegistrationFinishActivity.getIntent(this));
     }
 
     public void openGalleryForTakeNewPhoto() {

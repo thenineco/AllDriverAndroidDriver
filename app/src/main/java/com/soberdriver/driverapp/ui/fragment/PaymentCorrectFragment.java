@@ -31,9 +31,10 @@ public class PaymentCorrectFragment extends AppBaseFragment implements PaymentCo
             new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
-                    mPaymentCorrectScrollView.smoothScrollBy(0,
-                            DisplayUtils.getDisplayHeight(getContext()));
-
+                    if (getContext() != null) {
+                        mPaymentCorrectScrollView.smoothScrollBy(0,
+                                DisplayUtils.getDisplayHeight(getContext()));
+                    }
                 }
             };
     private boolean keyboardListenersAttached;

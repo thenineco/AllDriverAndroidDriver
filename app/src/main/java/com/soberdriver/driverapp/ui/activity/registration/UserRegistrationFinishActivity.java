@@ -13,6 +13,7 @@ import com.soberdriver.driverapp.presentation.presenter.registration
 import com.soberdriver.driverapp.presentation.view.registration.UserRegistrationFinishView;
 import com.soberdriver.driverapp.ui.activity.AppBaseActivity;
 import com.soberdriver.driverapp.ui.activity.MainDriverActivity;
+import com.soberdriver.driverapp.ui.activity.VirtualAccountActivity;
 
 import java.util.concurrent.TimeUnit;
 
@@ -51,8 +52,7 @@ public class UserRegistrationFinishActivity extends AppBaseActivity implements
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> {
                     timerSubscription.unsubscribe();
-                    startActivity(
-                            MainDriverActivity.getIntent(UserRegistrationFinishActivity.this));
+                    startActivity(VirtualAccountActivity.getIntent(this,false));
                 });
         mRegistrationFinishMainInfoTextView.setText("Спасибо! Вы успешно зарегистрировались в "
                 + "системе \"Твой водитель\".");

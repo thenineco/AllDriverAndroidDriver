@@ -16,6 +16,7 @@ import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.registration.InputPinCodePresenter;
 import com.soberdriver.driverapp.presentation.view.registration.InputPinCodeView;
 import com.soberdriver.driverapp.ui.activity.AppBaseActivity;
+import com.soberdriver.driverapp.ui.activity.MainDriverActivity;
 import com.soberdriver.driverapp.ui.view.PinView;
 import com.soberdriver.driverapp.utils.KeyboardUtil;
 
@@ -39,9 +40,8 @@ public class InputPinCodeActivity extends AppBaseActivity implements InputPinCod
     LinearLayout mInputPhoneNumberInputContainer;
 
     public static Intent getIntent(final Context context) {
-        Intent intent = new Intent(context, InputPinCodeActivity.class);
 
-        return intent;
+        return new Intent(context, InputPinCodeActivity.class);
     }
 
 
@@ -62,7 +62,7 @@ public class InputPinCodeActivity extends AppBaseActivity implements InputPinCod
     private void setPinViewParams() {
         mPinView.setCodeCallback(cod -> {
             KeyboardUtil.closeKeyboard(InputPinCodeActivity.this, mPinCodeEditText);
-            startActivity(InputUserInfoActivity.getIntent(InputPinCodeActivity.this));
+            mInputPinCodePresenter.sendPinCode(cod);
         });
 
         mPinCodeEditText.addTextChangedListener(new TextWatcher() {
@@ -91,6 +91,16 @@ public class InputPinCodeActivity extends AppBaseActivity implements InputPinCod
             }
             return false;
         });
+    }
+
+    @Override
+    public void startInputUserInfo() {
+        startActivity(InputUserInfoActivity.getIntent(InputPinCodeActivity.this));
+    }
+
+    @Override
+    public void startMainApp() {
+        startActivity(MainDriverActivity.getIntent(InputPinCodeActivity.this));
     }
 
     @OnClick(R.id.pin_view)

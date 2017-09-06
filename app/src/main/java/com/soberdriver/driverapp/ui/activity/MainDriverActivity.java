@@ -14,6 +14,8 @@ import android.widget.FrameLayout;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.balysv.materialmenu.MaterialMenuDrawable;
+import com.module.network.networkmodule.utils.DriverUtil;
+import com.soberdriver.driverapp.DriverApp;
 import com.soberdriver.driverapp.R;
 import com.soberdriver.driverapp.presentation.presenter.MainDriverPresenter;
 import com.soberdriver.driverapp.presentation.view.MainDriverView;

@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Driverapp.iml" filepath="$PROJECT_DIR$/Driverapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/network-module/network-module.iml" filepath="$PROJECT_DIR$/network-module/network-module.iml" />
     </modules>
   </component>
 </project>

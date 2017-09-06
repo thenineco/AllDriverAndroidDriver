@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.soberdriver.driverapp"
         vectorDrawables.useSupportLibrary = true
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -33,16 +33,14 @@ allprojects {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:recyclerview-v7:25.0.1'
     compile 'com.android.support:cardview-v7:25.0.1'
-
     /*Butterknife*/
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
@@ -75,4 +73,7 @@ dependencies {
     compile 'com.facebook.stetho:stetho-okhttp3:1.4.1'
     /*Glide*/
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile project(':network-module')
+    /*WebSocket client.*/
+    compile 'com.github.nkzawa:socket.io-client:0.3.0'
 }

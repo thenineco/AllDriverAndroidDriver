@@ -76,28 +76,36 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
                 new GetStartedDialogFragment.GetStartedDialogListener() {
                     @Override
                     public void inOfficial() {
-                        getStartedDialogFragment.dismiss();
                         setOfficialMode();
+                        mBeginningOfWorkPresenter.openSession();
                     }
 
                     @Override
                     public void noOfficial() {
-                        getStartedDialogFragment.dismiss();
                         setNoOfficialMode();
+                        mBeginningOfWorkPresenter.openSession();
                     }
                 });
 
         getFinishedDialogFragment.setOnClickListener(view -> {
             switch (view.getId()) {
                 case R.id.dialog_get_finished_yes_btn:
-                    setStartedMode();
-                    getFinishedDialogFragment.dismiss();
+                    mBeginningOfWorkPresenter.closeSession();
                     break;
                 case R.id.dialog_get_finished_no_btn:
                     getFinishedDialogFragment.dismiss();
                     break;
             }
         });
+    }
+
+    @Override
+    public void hideDialogFragment() {
+        if (started) {
+            getStartedDialogFragment.dismiss();
+        } else {
+            getFinishedDialogFragment.dismiss();
+        }
     }
 
     private void setOfficialMode() {
@@ -133,7 +141,6 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
             getFinishedDialogFragment.show(getActivity().getSupportFragmentManager(),
                     "Get finished dialog");
         } else {
-            setFinishedMode();
             getStartedDialogFragment.show(getActivity().getSupportFragmentManager(),
                     "Get started dialog");
         }
@@ -143,7 +150,8 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
         startActivity(UserProfileActivity.getIntent(getContext()));
     }
 
-    public void setStartedMode() {
+    @Override
+    public void setSessionCloseMode() {
         started = false;
         TypedValue typedValue = new TypedValue();
         Resources.Theme theme = getContext().getTheme();
@@ -155,7 +163,8 @@ public class BeginningOfWorkFragment extends AppBaseFragment implements Beginnin
         mBeginningOfWorkGetStartedBtn.setText("Открыть смену");
     }
 
-    public void setFinishedMode() {
+    @Override
+    public void setSessionOpenMode() {
         started = true;
         mEmulationBtn.setVisibility(View.VISIBLE);
         mBeginningOfWorkGetStartedBtn.setTextColor(Color.BLACK);
